@@ -10,6 +10,10 @@ st.title("⚡ Appliance Energy Consumption Predictor")
 # --- USER INPUTS ---
 T1 = st.number_input("T1 (Kitchen Temp)", value=20.0)
 RH_1 = st.number_input("RH_1 (Kitchen Humidity)", value=50.0)
+T2 = st.number_input("Living Room Temperature (T2)", value=20.0)
+RH_2 = st.number_input("Living Room Humidity (RH_2)", value=50.0)
+T3 = st.number_input("Laundry Temperature (T3)", value=20.0)
+RH_3 = st.number_input("Laundry Humidity (RH_3)", value=50.0)
 hour = st.slider("Hour", 0, 23, 12)
 day = st.slider("Day", 1, 31, 15)
 month = st.slider("Month", 1, 12, 6)
@@ -19,9 +23,21 @@ month = st.slider("Month", 1, 12, 6)
 input_dict = feature_means.to_dict()
 
 # Replace with user inputs
-input_dict["T1"] = T1
-input_dict["RH_1"] = RH_1
+input_dict = {col: 0 for col in feature_names}
 
+# Fill user inputs
+if "T1" in input_dict:
+    input_dict["T1"] = T1
+if "RH_1" in input_dict:
+    input_dict["RH_1"] = RH_1
+if "T2" in input_dict:
+    input_dict["T2"] = T2
+if "RH_2" in input_dict:
+    input_dict["RH_2"] = RH_2
+if "T3" in input_dict:
+    input_dict["T3"] = T3
+if "RH_3" in input_dict:
+    input_dict["RH_3"] = RH_3
 if "hour" in input_dict:
     input_dict["hour"] = hour
 if "day" in input_dict:
