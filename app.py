@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load model, features, and mean values
-model, feature_names, feature_means = joblib.load("energy_model.pkl")
+model, feature_names, feature_means = joblib.load("energy_modell.pkl")
 
 st.title("⚡ Appliance Energy Consumption Predictor")
 
