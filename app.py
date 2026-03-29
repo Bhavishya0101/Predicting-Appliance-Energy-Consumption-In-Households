@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load model + feature names
-model, feature_names = joblib.load("energy_model.pkl")
+model, feature_names = joblib.load("energy_model2.pkl")
 
 st.title("⚡ Energy Consumption Predictor")
 
